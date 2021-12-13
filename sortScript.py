@@ -8,7 +8,9 @@ two = "\033[32m"
 
 expansion = ['png', 'jpg', 'svg']
 
-file_name = os.listdir()
+path = "/Users/rosinnovacii/Desktop"
+
+file_name = os.listdir(path)
 for m in file_name:
     fileSplit = m.split('.')[-1]
     if fileSplit in expansion:
