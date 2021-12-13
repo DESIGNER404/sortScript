@@ -6,14 +6,14 @@ import time
 one = "\033[31m"
 two = "\033[32m"
 
-expansion = ['png', 'jpg', 'svg']
+extension = ['png', 'jpg', 'svg']
 
 path = "/Users/rosinnovacii/Desktop"
 
 file_name = os.listdir(path)
 for m in file_name:
     fileSplit = m.split('.')[-1]
-    if fileSplit in expansion:
+    if fileSplit in extension:
         shutil.move(f"/Users/rosinnovacii/Desktop/{m}", f"/Users/rosinnovacii/Desktop/Delete/{m}")
         print (one + f"есть такой фаил: {m}")
     else:
