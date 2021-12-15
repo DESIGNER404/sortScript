@@ -22,3 +22,5 @@ for m in file_name:
         print (two + f"нет такого файла: {m}")
 
 os.rmdir(path2)
+
+input()
