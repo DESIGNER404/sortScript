@@ -4,10 +4,10 @@ import subprocess
 import time
 from datetime import date, datetime
 
-one = "\033[31m"
-two = "\033[32m"
+Red = "\033[31m"
+Green = "\033[32m"
 
-extension = ['png', 'jpg', 'svg', 'blend1']
+extension = ['png', 'jpg', 'svg', 'blend1', 'fbx']
 
 path = "/Users/rosinnovacii/Desktop"
 path2 =f"{path}/Delete1"
@@ -18,15 +18,14 @@ for m in file_name:
     fileSplit = m.split('.')[-1]
     if fileSplit in extension:
         shutil.move(f"{path}/{m}", f"{path}/Delete1/{m}")
-        print (one + f"есть такой фаил: {m}")
+        print (Red + f"есть такой фаил: {m}")
     else:
-        print (two + f"нет такого файла: {m}")
+        print (Green + f"нет такого файла: {m}")
 
+current_date = date.today()
+question = input("Хотите удалите все файлы?(y/n):")
 
-question = input('Хотите удалите все файлы?(Y/N): ')
-
-if question == "Y":
+if question == "y":
     os.rmdir(path2)
 else:
-    current_date = date.today()
     shutil.move(f"{path}/Delete1", f"{path}/Delete/Delete_{current_date}")
