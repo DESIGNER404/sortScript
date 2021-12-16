@@ -26,6 +26,9 @@ current_date = date.today()
 question = input("Хотите удалите все файлы?(y/n):")
 
 if question == "y":
-    os.rmdir(path2)
+    shutil.rmtree(path2)
 else:
-    shutil.move(f"{path}/Delete1", f"{path}/Delete/Delete_{current_date}")
+   shutil.move(path2, f"{path}/Delete/Delete_{current_date}")
+
+print("\n\nDone!")
+input()
