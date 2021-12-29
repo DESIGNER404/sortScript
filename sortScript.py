@@ -4,9 +4,13 @@ import subprocess
 import time
 from datetime import date, datetime
 
-def getNum(path:str):
-    d = max(path.split(sep="--")[-1])
-    return d
+def getMax(dir_list):
+     nums = []
+     for j in dir_list:
+         parts = j.split("--")
+         if len(parts) > 1:
+             nums.append(int(parts[-1]))
+     return max(nums)
 
 Red = "\033[31m"
 Green = "\033[32m"
@@ -34,13 +38,6 @@ if question == "y":
     shutil.rmtree(path2)
 else:
    in_delete = os.listdir("/Users/rosinnovacii/Desktop/Delete")
-   def getMax(dir_list):
-        nums = []
-        for j in dir_list:
-            parts = j.split("--")
-            if len(parts) > 1:
-                nums.append(int(parts[-1]))
-        return max(nums)
    maxNum = getMax(in_delete)
    ret = maxNum + 1
    shutil.move(path2, f"{path}/Delete/Delete_{current_date}--{ret}")
